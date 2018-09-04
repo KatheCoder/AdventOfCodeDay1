@@ -24,17 +24,15 @@ function PartA($input){
 }
 
 function PartB($input){
-  $InputLen = strlen($input);
-  $HalfStep = $InputLen / 2;
-  $counter = 0;
+   $counter = 0;
 
-  for($i = 0; $i < $InputLen; $i++)
+  for( $i = 0; $i < strlen($input); $i++ )
   {
     $InitNum = substr($input, $i, 1);
-    $NumIndex = $i + $HalfStep;
+    $NumIndex = $i + ( strlen($input) / 2 );
 
-    if( $NumIndex >= ( $InputLen - 1 ) ) {
-      $NumIndex -= $InputLen;
+    if( $NumIndex >= ( strlen($input) - 1 ) ) {
+      $NumIndex -= strlen($input);
     }
 
     $Receprocal = substr($input, $NumIndex, 1);
